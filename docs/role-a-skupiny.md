@@ -2,7 +2,11 @@
 
 ## OWUI role
 
-OWUI rozlišuje tři uživatelské role. Role je přiřazena Adminem při zřízení účtu (nebo automaticky při prvním přihlášení přes SSO dle výchozího nastavení).
+OWUI rozlišuje tři uživatelské role.
+
+**Zřízení účtu a výchozí role:** Účet vzniká při prvním přihlášení přes SSO. Přístup k platformě (a tím i k jakýmkoliv modelům/agentům) je ovšem podmíněn členstvím v příslušných AD skupinách – samotné založení účtu žádný obsah nezpřístupní. Výchozí role nového účtu je **User**; role **PowerUser** a **Admin** přiděluje výhradně Admin na základě schváleného požadavku (viz [`governance.md`](governance.md)).
+
+> **Otevřená otázka:** Zda povolit auto-provisioning účtu při prvním SSO loginu pro všechny zaměstnance, nebo vyžadovat explicitní zřízení/zařazení do skupiny předem. Rozhodnutí ve spolupráci s IAM a bezpečnostním týmem.
 
 ### User
 

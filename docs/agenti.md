@@ -88,9 +88,11 @@ Příklady use-cases:
 
 | Zdroj | Typ přístupu | Poznámka |
 |---|---|---|
-| ServiceDesk | čtení / zápis | _[upřesnit – název systému]_ |
+| ServiceDesk | čtení (zápis cílově) | _[upřesnit – název systému]_; zápis viz pozn. níže |
 | CMDB | čtení | |
 | Interní IT dokumentace | RAG | |
+
+> **Zápisové operace (write):** V iniciální fázi pracují agenti se zdroji **pouze pro čtení**. Zápis (např. zakládání ticketů) je rizikovější (idempotence, potvrzení uživatelem, audit zápisů) a bude zaveden až po samostatném bezpečnostním posouzení a definici postupu v [`pristup-ke-zdrojum.md`](pristup-ke-zdrojum.md).
 
 Příklady use-cases:
 - asistence při zakládání a řešení ticketů

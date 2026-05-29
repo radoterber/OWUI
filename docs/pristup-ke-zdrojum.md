@@ -71,6 +71,9 @@ OWUI  ──[OBO token]──>  MCP Server  ──[user identity]──>  Cílov
 > **Otevřená otázka – dostupnost / fallback:**
 > Pokud MCP server nebo cílový systém není dostupný, jak se agent zachová? Měl by to srozumitelně sdělit uživateli.
 
+> **Otevřená otázka – zápisové (write) operace:**
+> V iniciální fázi se počítá pouze se čtením. Zápisové operace (např. založení ticketu v ServiceDesku) vyžadují řešení idempotence, explicitního potvrzení uživatelem před provedením, a auditu změn. Zavedeny budou až po samostatném bezpečnostním posouzení.
+
 > **Otevřená otázka – životnost OBO tokenu při vícekrokovém volání:**
 > Pokud agent v rámci jedné odpovědi provede více kroků (více volání zdroje), token uživatele musí být platný po celou dobu. Pro dlouhotrvající operace nebo pipeline kroky je třeba navrhnout strategii (refresh tokenu, opakované vyžádání OBO tokenu, omezení délky volání).
 

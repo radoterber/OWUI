@@ -70,7 +70,7 @@ Logická skupina agentů a zdrojů vázaná k oblasti banky (HR, Bankéři, Trad
 Protokol pro standardizovanou integraci modelů s externími zdroji a nástroji.
 
 **MCP server**
-Brána mezi agentem v OWUI a cílovým systémem (CRM, HR systém, …). Provádí volání jménem uživatele.
+Brána mezi agentem v OWUI a cílovým systémem (CRM, HR systém, …). Provádí volání jménem uživatele. Pozn.: OWUI dnes MCP nevolá nativně – integrace počítá s vrstvou OpenAPI Tool Servers, příp. MCP-to-OpenAPI proxy. Viz [`pristup-ke-zdrojum.md`](pristup-ke-zdrojum.md).
 
 **OBO (On-Behalf-Of)**
 OAuth2 flow, při kterém služba volá další službu se zachováním identity původního uživatele. V OWUI použito pro volání zdrojů jménem přihlášeného uživatele.

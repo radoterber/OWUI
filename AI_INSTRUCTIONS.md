@@ -10,6 +10,8 @@
 
 **Be concise, but clear and precise**
 
+- **Language:** see Language policy in `PROJECT.md`. Chat = Czech; `docs/` = Czech; control/meta files = English.
+
 ## Response
 
 - **informal:** no fluff, no apologies, no praise.

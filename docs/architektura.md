@@ -59,6 +59,8 @@ Agent kombinuje:
 
 Volání zdrojů přes MCP probíhá **on behalf of** přihlášeného uživatele – viz [`pristup-ke-zdrojum.md`](pristup-ke-zdrojum.md).
 
+> **Pozn. k diagramům:** "MCP server" v diagramech níže označuje doménovou bránu ke zdrojům logicky. OWUI dnes nativně nevolá MCP přímo – fyzicky se počítá s vrstvou OpenAPI Tool Servers, případně s MCP-to-OpenAPI proxy. Volba konkrétního mechanismu je otevřená otázka, viz [`pristup-ke-zdrojum.md`](pristup-ke-zdrojum.md).
+
 ### Domény a jejich MCP servery (cílový stav)
 
 ```

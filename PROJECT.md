@@ -5,7 +5,13 @@ This file provides guidance to AI Assistant when working with code in this repos
 ## IMPORTANT FILES
 
 **STATUS.md**: CURRENT PROJECT STATUS. READ IT INITIALLY, UPDATE IT AFTER SIGNIFICANT CHANGES
-**AI_INSTRUCTIOS.md**: Basic instructions for LLN/agents. Read it and follow instructions in itbefore work starts, ater compaction and always you need direction
+**AI_INSTRUCTIONS.md**: Basic instructions for LLMs/agents. Read it and follow its instructions before work starts, after compaction, and whenever you need direction.
+
+## Language policy
+
+- **Control/meta files** (`PROJECT.md`, `STATUS.md`, `AI_INSTRUCTIONS.md`, `README.md`): English.
+- **Product documentation** (`docs/`): Czech — it is the working language of the target audience in the bank.
+- **Chat communication with the user:** Czech, unless the user requests otherwise.
 
 ## IMPORTANT: Session State
 
@@ -20,7 +26,7 @@ This file contains:
 
 ## Project Overview
 
-**Open-WebUI implementation guidelines in the bank** — Unified AI platform in the bank.
+**Open-WebUI (OWUI) implementation guidelines for the bank** — a unified AI platform for the bank.
 
 This project creates documentation for Open-WebUI AI tool / workspace in the bank.
 
