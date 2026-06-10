@@ -2,7 +2,7 @@
 
 Dokumentace platformy **OWUI** nasazené v bankovním prostředí jako centrální AI hub. Platforma poskytuje přístup k jazykovým modelům a specializovaným agentům per business doménu, s přihlašováním přes SSO (EntraID) a řízením přístupu přes AD skupiny.
 
-> **Verze dokumentace:** iniciální draft · **Platné k:** _[doplnit datum]_ · Historie změn: viz git log
+> **Verze dokumentace:** iniciální draft · **Platné k:** 2026-06-10 · Historie změn: viz git log
 > Vlastník dokumentace: platformový tým (viz [`docs/governance.md`](docs/governance.md))
 
 ## Stav platformy
