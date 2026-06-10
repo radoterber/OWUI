@@ -8,21 +8,7 @@ OWUI funguje jako centrální AI hub banky – jednotné místo přístupu k jaz
 
 ### Aktuálně funkční
 
-```
-       [ Uživatel (prohlížeč) ]
-                |
-                | SSO (OAuth2 / EntraID)
-                v
-         [ Open-WebUI (OWUI) ]
-        /        |          \
-       /         |           \
-      v          v            v
-[ DB / vector ]  [ Web search ]  [ LiteLLM ]  ← firemní LLM proxy
-                                     |
-                                     +---> [ Model A ]
-                                     +---> [ Model B ]
-                                     +---> [ Model ... ]
-```
+![Aktuálně funkční architektura OWUI](img/architektura-aktualni.svg)
 
 - **DB / vector** – interní úložiště OWUI (uživatelská data, historie, vektorová DB pro RAG)
 - **Web search** – řízený nástroj pro vyhledávání na webu
@@ -30,27 +16,7 @@ OWUI funguje jako centrální AI hub banky – jednotné místo přístupu k jaz
 
 ### Plánované rozšíření – agenti a přístup ke zdrojům
 
-```
-       [ Uživatel (prohlížeč) ]
-                |
-                | SSO (OAuth2 / EntraID)
-                v
-         [ Open-WebUI (OWUI) ]
-        /        |          \
-       v         v           v
- [ Agent ]   [ Web search ]  [ Modely přes LiteLLM ]
-     |                              ^
-     | (1) volá model               |
-     +------------------------------+
-     |
-     | (2) volá nástroj / zdroj
-     v
- [ MCP Server: <doména> ]
-     |
-     | OBO – jménem uživatele
-     v
- [ Cílový systém (CRM, HR, ServiceDesk, ...) ]
-```
+![Plánované rozšíření – agenti a přístup ke zdrojům](img/architektura-agenti.svg)
 
 Agent kombinuje:
 - volání modelu přes LiteLLM
@@ -59,19 +25,11 @@ Agent kombinuje:
 
 Volání zdrojů přes MCP probíhá **on behalf of** přihlášeného uživatele – viz [`pristup-ke-zdrojum.md`](pristup-ke-zdrojum.md).
 
-> **Pozn. k diagramům:** "MCP server" v diagramech níže označuje doménovou bránu ke zdrojům logicky. OWUI dnes nativně nevolá MCP přímo – fyzicky se počítá s vrstvou OpenAPI Tool Servers, případně s MCP-to-OpenAPI proxy. Volba konkrétního mechanismu je otevřená otázka, viz [`pristup-ke-zdrojum.md`](pristup-ke-zdrojum.md).
+> **Pozn. k diagramům:** "MCP server" v diagramech označuje doménovou bránu ke zdrojům logicky. OWUI dnes nativně nevolá MCP přímo – fyzicky se počítá s vrstvou OpenAPI Tool Servers, případně s MCP-to-OpenAPI proxy. Volba konkrétního mechanismu je otevřená otázka, viz [`pristup-ke-zdrojum.md`](pristup-ke-zdrojum.md).
 
 ### Domény a jejich MCP servery (cílový stav)
 
-```
-[ OWUI ]
-   |
-   +-- Agent HR        --> [ MCP HR ]       --> [ Personální systém ]
-   +-- Agent Bankéři   --> [ MCP Bankéři ]  --> [ CRM ] [ Zůstatky účtů ]
-   +-- Agent Trading   --> [ MCP Trading ]  --> [ Trading platforma ]
-   +-- Agent Provoz    --> [ MCP Provoz ]   --> [ Interní systémy provozu ]
-   +-- Agent IT        --> [ MCP IT ]       --> [ ServiceDesk / CMDB ]
-```
+![Domény a jejich MCP servery](img/architektura-domeny.svg)
 
 Detail per doména viz [`agenti.md`](agenti.md).
 
